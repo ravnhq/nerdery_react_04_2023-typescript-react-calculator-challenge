@@ -1,5 +1,1 @@
-const isSendEnabled = Boolean(
-  !loading &&
-    ((message && message.length <= MAX_MESSAGE_LENGTH) ||
-      (!message && imageSource)),
-);
+module.exports = require("@ravn-dev/prettier-config");
