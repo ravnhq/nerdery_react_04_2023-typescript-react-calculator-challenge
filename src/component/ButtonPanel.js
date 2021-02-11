@@ -1,17 +1,17 @@
-import Button from "./Button";
-import React from "react";
-import PropTypes from "prop-types";
+import Button from './Button'
+import React from 'react'
+import PropTypes from 'prop-types'
 
-import "./ButtonPanel.css";
+import './ButtonPanel.css'
 
 export default class ButtonPanel extends React.Component {
   static propTypes = {
     clickHandler: PropTypes.func,
-  };
+  }
 
   handleClick = buttonName => {
-    this.props.clickHandler(buttonName);
-  };
+    this.props.clickHandler(buttonName)
+  }
 
   render() {
     return (
@@ -46,6 +46,6 @@ export default class ButtonPanel extends React.Component {
           <Button name="=" clickHandler={this.handleClick} orange />
         </div>
       </div>
-    );
+    )
   }
 }

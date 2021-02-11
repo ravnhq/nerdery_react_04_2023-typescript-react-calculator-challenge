@@ -33,7 +33,7 @@ yarn tsc
 Before you can complete the challenge you need to run and pass the tests:
 
 ```
-yarn test
+yarn validate
 ```
 
 The original calculator project was taken and modified from here: https://github.com/ahfarmer/calculator_
