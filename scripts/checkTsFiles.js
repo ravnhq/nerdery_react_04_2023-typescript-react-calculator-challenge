@@ -3,7 +3,7 @@ const fs = require('fs')
 
 const javascriptFiles = new Set()
 
-const findJavascriptFiles = startPath => {
+const findJavascriptFiles = (startPath) => {
   const files = fs.readdirSync(startPath)
 
   for (let i = 0; i < files.length; i++) {
