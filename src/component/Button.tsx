@@ -30,7 +30,7 @@ export const Button : React.FC<Button> = (props : Button) => {
 
 Button.propTypes = {
     name: PropTypes.string.isRequired,
-    orange: PropTypes.bool.isRequired,
-    wide: PropTypes.bool.isRequired,
+    orange: PropTypes.bool,
+    wide: PropTypes.bool,
     clickHandler: PropTypes.func.isRequired
   }

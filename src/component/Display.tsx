@@ -17,5 +17,5 @@ export const Display : React.FC<DisplayProps> = ({ value }) => {
 
 
 Display.propTypes = {
-  value: PropTypes.string,
+  value: PropTypes.string
 }
