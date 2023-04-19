@@ -1,5 +1,4 @@
 import Big from 'big.js'
-import { Operation } from '../component/App'
 
 export default function operate( {total : numberOne, next : numberTwo, operation : operation} : Operation) {
   const one = Big(numberOne ?? '0')

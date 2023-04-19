@@ -2,7 +2,6 @@ import Big from 'big.js'
 
 import operate from './operate'
 import isNumber from './isNumber'
-import { Operation } from '../component/App'
 
 /**
  * Given a button name and a calculator data object, return an updated
