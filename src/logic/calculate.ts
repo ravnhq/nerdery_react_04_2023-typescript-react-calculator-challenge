@@ -12,7 +12,7 @@ import isNumber from './isNumber'
  *   next:String       the next number to be operated on with the total
  *   operation:String  +, -, etc.
  */
-export default function calculate(obj :Operation, buttonName : string) {
+export default function calculate(obj: Operation, buttonName: string) {
   if (buttonName === 'AC') {
     return {
       total: null,
@@ -21,7 +21,8 @@ export default function calculate(obj :Operation, buttonName : string) {
     }
   }
 
-  if (isNumber(buttonName)) {    if (buttonName === '0' && obj.next === '0') {
+  if (isNumber(buttonName)) {
+    if (buttonName === '0' && obj.next === '0') {
       return {}
     }
     // If there is an operation, update next
@@ -47,7 +48,11 @@ export default function calculate(obj :Operation, buttonName : string) {
 
   if (buttonName === '%') {
     if (obj.operation && obj.next) {
-      const result = operate({total:obj.total, next:obj.next, operation:obj.operation})
+      const result = operate({
+        total: obj.total,
+        next: obj.next,
+        operation: obj.operation,
+      })
       return {
         total: Big(result).div(Big('100')).toString(),
         next: null,
@@ -76,7 +81,11 @@ export default function calculate(obj :Operation, buttonName : string) {
   if (buttonName === '=') {
     if (obj.next && obj.operation) {
       return {
-        total: operate({total:obj.total, next:obj.next, operation:obj.operation}),
+        total: operate({
+          total: obj.total,
+          next: obj.next,
+          operation: obj.operation,
+        }),
         next: null,
         operation: null,
       }
@@ -107,7 +116,11 @@ export default function calculate(obj :Operation, buttonName : string) {
   // User pressed an operation button and there is an existing operation
   if (obj.operation) {
     return {
-      total: operate({total:obj.total, next:obj.next, operation:obj.operation}),
+      total: operate({
+        total: obj.total,
+        next: obj.next,
+        operation: obj.operation,
+      }),
       next: null,
       operation: buttonName,
     }

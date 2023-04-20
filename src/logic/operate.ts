@@ -1,6 +1,10 @@
 import Big from 'big.js'
 
-export default function operate( {total : numberOne, next : numberTwo, operation : operation} : Operation) {
+export default function operate({
+  total: numberOne,
+  next: numberTwo,
+  operation: operation,
+}: Operation) {
   const one = Big(numberOne ?? '0')
   const two = Big(
     numberTwo ?? (operation === '÷' || operation === 'x' ? '1' : '0'),
