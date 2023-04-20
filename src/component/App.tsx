@@ -17,8 +17,10 @@ const App: React.FunctionComponent = () => {
   )
 
   const handleClick = (buttonName: string) => {
-    const newState = calculate(state, buttonName)
-    setState(newState as CalculatorData)
+    setState((prevState: CalculatorData) => ({
+      ...prevState,
+      ...calculate(state, buttonName),
+    }))
   }
 
   return (
