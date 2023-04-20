@@ -1,9 +1,13 @@
 import Big from 'big.js'
 
-export default function operate(numberOne, numberTwo, operation) {
-  const one = Big(numberOne || '0')
+export default function operate(
+  numberOne: string | null,
+  numberTwo: string | null,
+  operation: string | null,
+) {
+  const one = Big(numberOne ?? '0')
   const two = Big(
-    numberTwo || (operation === '÷' || operation === 'x' ? '1' : '0'),
+    numberTwo ?? (operation === '÷' || operation === 'x' ? '1' : '0'),
   ) //If dividing or multiplying, then 1 maintains current value in cases of null
   if (operation === '+') {
     return one.plus(two).toString()
@@ -22,5 +26,5 @@ export default function operate(numberOne, numberTwo, operation) {
       return one.div(two).toString()
     }
   }
-  throw Error(`Unknown operation '${operation}'`)
+  throw Error(`Unknown operation '${operation ?? 'null'}'`)
 }
