@@ -8,7 +8,7 @@
     "checkTsFiles": "node ./scripts/checkTsFiles.js",
     "typescript": "tsc",
     "lint": "eslint src",
-    "format": "cross-env prettier .",
+    "format": "prettier .",
     "format:check": "yarn format --check",
     "validate": "npm-run-all typescript lint format:check checkTsFiles"
   },

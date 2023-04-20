@@ -2,7 +2,7 @@ import React from 'react'
 import './index.css'
 
 interface Props {
-    value: string
+  value: string
 }
 
 const Display: React.FunctionComponent<Props> = ({ value }) => (
