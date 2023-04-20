@@ -3,6 +3,7 @@ import Display from './Display'
 import ButtonPanel from './ButtonPanel'
 import calculate from '../logic/calculate'
 import './App.css'
+import { AppState, clickHandlerFunction } from './types'
 
 // export default class App extends React.Component {
 //   state = {
@@ -28,21 +29,21 @@ import './App.css'
 // }
 
 export default function App() {
-  const [ownState, setOwnState] = useState({
+  const [ownState, setOwnState] = useState<AppState>({
     total: null,
     next: null,
     operation: null,
   })
 
-  function handleClick(buttonName) {
+  const handleClick: clickHandlerFunction = (buttonName) => {
     const newState = calculate(ownState, buttonName)
 
-    setOwnState({ ...ownState, ...newState })
+    setOwnState({ ...ownState, ...newState } as AppState)
   }
 
   return (
     <div className="component-app">
-      <Display value={ownState.next || ownState.total || '0'} />
+      <Display value={ownState.next ?? ownState.total ?? '0'} />
       <ButtonPanel clickHandler={handleClick} />
     </div>
   )
