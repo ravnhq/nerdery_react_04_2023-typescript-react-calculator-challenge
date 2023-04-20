@@ -4,11 +4,11 @@
   "license": "MIT",
   "homepage": "http://ahfarmer.github.io/calculator",
   "scripts": {
-    "start": "node scripts/start.js",
+    "start": "node --openssl-legacy-provider scripts/start.js",
     "checkTsFiles": "node ./scripts/checkTsFiles.js",
     "typescript": "tsc",
     "lint": "eslint src",
-    "format": "cross-env prettier .",
+    "format": "prettier .",
     "format:check": "yarn format --check",
     "validate": "npm-run-all typescript lint format:check checkTsFiles"
   },
