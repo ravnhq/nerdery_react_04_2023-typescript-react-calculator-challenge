@@ -12,7 +12,7 @@ import isNumber from './isNumber'
  *   next:String       the next number to be operated on with the total
  *   operation:String  +, -, etc.
  */
-export default function calculate(obj, buttonName) {
+export default function calculate(obj: Operation, buttonName: string) {
   if (buttonName === 'AC') {
     return {
       total: null,
@@ -48,7 +48,11 @@ export default function calculate(obj, buttonName) {
 
   if (buttonName === '%') {
     if (obj.operation && obj.next) {
-      const result = operate(obj.total, obj.next, obj.operation)
+      const result = operate({
+        total: obj.total,
+        next: obj.next,
+        operation: obj.operation,
+      })
       return {
         total: Big(result).div(Big('100')).toString(),
         next: null,
@@ -77,7 +81,11 @@ export default function calculate(obj, buttonName) {
   if (buttonName === '=') {
     if (obj.next && obj.operation) {
       return {
-        total: operate(obj.total, obj.next, obj.operation),
+        total: operate({
+          total: obj.total,
+          next: obj.next,
+          operation: obj.operation,
+        }),
         next: null,
         operation: null,
       }
@@ -108,7 +116,11 @@ export default function calculate(obj, buttonName) {
   // User pressed an operation button and there is an existing operation
   if (obj.operation) {
     return {
-      total: operate(obj.total, obj.next, obj.operation),
+      total: operate({
+        total: obj.total,
+        next: obj.next,
+        operation: obj.operation,
+      }),
       next: null,
       operation: buttonName,
     }
