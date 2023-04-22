@@ -3,10 +3,10 @@ import React from 'react'
 import PropTypes from 'prop-types'
 
 import './ButtonPanel.css'
-import { ButtonPanelProps, clickHandlerFunction } from './types'
+import { ButtonPanelProps, ClickHandlerFunction } from './types'
 
 export default function ButtonPanel({ clickHandler }: ButtonPanelProps) {
-  const handleClick: clickHandlerFunction = (buttonName) => {
+  const handleClick: ClickHandlerFunction = (buttonName) => {
     clickHandler(buttonName)
   }
 

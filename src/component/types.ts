@@ -14,17 +14,17 @@ export interface DisplayProps {
   value: string
 }
 
-export interface clickHandlerFunction {
+export interface ClickHandlerFunction {
   (buttonName: string): void
 }
 
 export interface ButtonPanelProps {
-  clickHandler: clickHandlerFunction
+  clickHandler: ClickHandlerFunction
 }
 
 export interface ButtonProps {
   name: string
   orange?: boolean
   wide?: boolean
-  clickHandler: clickHandlerFunction
+  clickHandler: ClickHandlerFunction
 }
