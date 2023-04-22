@@ -1,5 +1,4 @@
 import React from 'react'
-import PropTypes from 'prop-types'
 import './Button.css'
 import { ButtonProps } from './types'
 
@@ -24,11 +23,4 @@ export default function Button({
       <button onClick={handleClick}>{name}</button>
     </div>
   )
-}
-
-Button.propTypes = {
-  name: PropTypes.string,
-  orange: PropTypes.bool,
-  wide: PropTypes.bool,
-  clickHandler: PropTypes.func,
 }

@@ -1,6 +1,5 @@
 import Button from './Button'
 import React from 'react'
-import PropTypes from 'prop-types'
 
 import './ButtonPanel.css'
 import { ButtonPanelProps, ClickHandlerFunction } from './types'
@@ -43,8 +42,4 @@ export default function ButtonPanel({ clickHandler }: ButtonPanelProps) {
       </div>
     </div>
   )
-}
-
-ButtonPanel.propTypes = {
-  clickHandler: PropTypes.func,
 }
