@@ -4,11 +4,7 @@ export interface AppState {
   operation: string | null
 }
 
-export type PartialAppState = {
-  total?: string
-  next?: string
-  operation?: string
-}
+export type PartialAppState = Partial<AppState>
 
 export interface DisplayProps {
   value: string
