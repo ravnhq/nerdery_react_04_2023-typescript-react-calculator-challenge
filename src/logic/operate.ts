@@ -1,6 +1,10 @@
 import Big from 'big.js'
 
-export default function operate(numberOne: string | null, numberTwo: string | null, operation: string) {
+export default function operate(
+  numberOne: string | null,
+  numberTwo: string | null,
+  operation: string,
+) {
   const one = Big(numberOne ?? '0')
   const two = Big(
     numberTwo ?? (operation === '÷' || operation === 'x' ? '1' : '0'),
